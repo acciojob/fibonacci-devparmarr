@@ -1,9 +1,17 @@
 function fibonacci(num) {
-  if (num <= 0) return 0; // Base case: Fibonacci of 0 or negative numbers is 0
-  if (num === 1) return 1; // Base case: Fibonacci of 1 is 1
-
-  // Recursive step: Fibonacci of num is the sum of the previous two Fibonacci numbers
-  return fibonacci(num - 1) + fibonacci(num - 2);
+  if (num === 1) return 0;
+  else if (num === 2) return 1;
+  num -= 2;
+  var num1 = 0;
+  var num2 = 1;
+  var sum;
+  var i = 0;
+  for (i = 0; i < num; i++) {
+    sum = num1 + num2;
+    num1 = num2;
+    num2 = sum;
+  }
+  return num2;
 }
 
 module.exports = fibonacci;
